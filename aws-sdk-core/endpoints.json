@@ -1965,6 +1965,55 @@
           }
         }
       }
+    },
+    {
+      "defaults": {
+        "hostname": "{service}.{region}.{dnsSuffix}",
+        "protocols": [
+          "https"
+        ],
+        "signatureVersions": [
+          "v2",
+          "v4"
+        ]
+      },
+      "dnsSuffix": "cloud.croc.ru",
+      "partition": "c2",
+      "partitionName": "Croc Cloud",
+      "regionRegex": "^c2\\-eu\\-\\w\\-\\d+$",
+      "regions": {
+        "c2-eu-east-1": {
+          "description": "Croc Cloud Russia (Moscow)"
+        }
+      },
+      "services": {
+        "cw": {
+          "endpoints": {
+            "c2-eu-east-1": {
+              "hostname": "monitoring.cloud.croc.ru"
+            }
+          }
+        },
+        "ec2": {
+          "endpoints": {
+            "c2-eu-east-1": {
+              "hostname": "api.cloud.croc.ru"
+            }
+          }
+        },
+        "s3": {
+          "defaults": {
+            "signatureVersions": [
+              "s3"
+            ]
+          },
+          "endpoints": {
+            "c2-eu-east-1": {
+              "hostname": "storage.cloud.croc.ru"
+            }
+          }
+        }
+      }
     }
   ],
   "version": 3
