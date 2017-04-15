@@ -2,7 +2,7 @@
   "partitions": [
     {
       "defaults": {
-        "hostname": "{service}.{region}.{dnsSuffix}",
+        "hostname": "{region}.{dnsSuffix}",
         "protocols": [
           "https"
         ],
@@ -10,11 +10,14 @@
           "v4"
         ]
       },
-      "dnsSuffix": "amazonaws.com",
+      "dnsSuffix": "cloud.croc.ru",
       "partition": "aws",
       "partitionName": "AWS Standard",
-      "regionRegex": "^(us|eu|ap|sa|ca)\\-\\w+\\-\\d+$",
+      "regionRegex": "^api$",
       "regions": {
+        "api": {
+          "description": "Croc Cloud (Moscow)"
+        },
         "ap-northeast-1": {
           "description": "Asia Pacific (Tokyo)"
         },
@@ -508,6 +511,7 @@
             ]
           },
           "endpoints": {
+            "api": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
             "ap-south-1": {},
@@ -1584,6 +1588,7 @@
             ]
           },
           "endpoints": {
+            "api": {},
             "cn-north-1": {}
           }
         },
@@ -1815,6 +1820,7 @@
         },
         "ec2": {
           "endpoints": {
+            "api": {},
             "us-gov-west-1": {}
           }
         },
@@ -1962,58 +1968,6 @@
         "swf": {
           "endpoints": {
             "us-gov-west-1": {}
-          }
-        }
-      }
-    },
-    {
-      "defaults": {
-        "hostname": "{service}.{region}.{dnsSuffix}",
-        "protocols": [
-          "https"
-        ],
-        "signatureVersions": [
-          "v2",
-          "v4"
-        ]
-      },
-      "dnsSuffix": "cloud.croc.ru",
-      "partition": "c2",
-      "partitionName": "Croc Cloud",
-      "regionRegex": "^eu\\-\\w+\\-\\d+$",
-      "regions": {
-        "croc": {
-          "description": "Croc Cloud (Moscow)"
-        }
-      },
-      "services": {
-        "cw": {
-          "endpoints": {
-            "eu-east-1": {
-              "hostname": "api.cloud.croc.ru",
-              "region": "croc"
-            }
-          }
-        },
-        "ec2": {
-          "endpoints": {
-            "eu-east-1": {
-              "hostname": "monitoring.cloud.croc.ru",
-              "region": "croc"
-            }
-          }
-        },
-        "s3": {
-          "defaults": {
-            "signatureVersions": [
-              "s3"
-            ]
-          },
-          "endpoints": {
-            "eu-east-1": {
-              "hostname": "storage.cloud.croc.ru",
-              "region": "croc"
-            }
           }
         }
       }
